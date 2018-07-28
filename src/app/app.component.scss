@@ -1,0 +1,30 @@
+nav {
+    background: orange;
+    display: flex;
+    padding: 8px;
+
+    .logo {
+        
+        background: white;
+        margin: auto;
+
+        img {
+            display: block;
+            height: 50px;
+            min-height: 50px;
+        }
+    }
+
+    .toggle {
+        background: red;
+        align-self: center;
+    }
+
+    .collapse {
+        background: green;
+        display: none;
+        width: 100%;
+    }
+
+    
+}
