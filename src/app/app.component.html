@@ -1,9 +1,13 @@
-<nav>
-    <a class="logo" href="#home">
-        <img src="assets/menuAlianza/logo.svg" alt="La Alianza">
-    </a>
-    <div class="toggle">X</div>
-    <div class="collapse" >
+<nav [class.active]="expandir">
+
+    <div class="line">
+        <a class="logo" href="#home">
+            <img src="assets/menuAlianza/logo.svg" alt="La Alianza">
+        </a>
+        <div class="toggle" [class.active]="!collapsed" (click)="expandir = !expandir" >X</div>
+    </div>
+    
+    <div class="collapse" [class.active]="expandir" >
 
         soy colapse
 
