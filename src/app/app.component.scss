@@ -1,40 +1,46 @@
+$menuHeight: 50px;
+$menuPadding: 8px;
+$menuPaddingLR:18%;  //Paddin left and right in Destopk  
+$color1: #fff;
+
 nav {
     background: orange;
     box-sizing: border-box;
-    transition: all 1s;
     position: fixed;
     width: 100%;
  
+    @media only screen and (min-width : 1200px) {
+        display: flex;
+        padding: 0 $menuPaddingLR;
 
+        .line .toggle {display: none;}
+    }
  
-
     .line {
         position: relative;
         display: flex;
         flex-direction: row;
         flex: 0 0 auto;
-        padding: 8px;
+        padding: $menuPadding;
         z-index: 2;
+        background: $color1;
 
-        .logo {
-            
+        .logo {          
             background: white;
             margin: auto;
 
             img {
                 display: block;
-                height: 50px;
-                min-height: 50px;
+                height: $menuHeight - $menuPadding * 2;             
             }
         }
 
         .toggle {
             background: red;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             cursor: pointer;
         }
-
     }
 
     .collapse {
@@ -45,12 +51,43 @@ nav {
         height: 100vh;
         z-index: 1;
         transition: top 0.7s ease-in;
+        padding-top: $menuHeight;
 
-        &.active {
-            top: 0;
+        &.active { top: 0; }
+
+        @media only screen and (min-width : 1200px) {
+            position: initial;
+            width: initial;
+            height: initial;
+            padding-top: initial;
+            flex: 1;
         }
-
     }
-
-    
 }
+
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
