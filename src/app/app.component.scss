@@ -35,7 +35,7 @@ nav {
     width: 100%;
     color: $colorText;
   
-    .line {
+    .head {
         position: relative;
         display: flex;
         flex-direction: row;
@@ -49,16 +49,13 @@ nav {
 
             img {
                 display: block;
-                height: $menuHeight - $menuPadding * 2;   
-                //background: white;          
+                height: $menuHeight - $menuPadding * 2;        
             }
         }
 
         .toggle {
-            background: red;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
+            width: $menuHeight - $menuPadding * 2;
+            height: $menuHeight - $menuPadding * 2;
         }
     }
 
@@ -71,6 +68,7 @@ nav {
         z-index: 1;
         transition: top 0.7s ease-in;
         padding-top: $menuHeight;
+        overflow: hidden;
 
         display: flex;
         flex-direction: column;
@@ -124,9 +122,15 @@ nav {
 
                 a{
                     display: block;
-                    background: black;
+                    //background: black;
                     width: $socialPhoneSize;
                     height: $socialPhoneSize;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
 
             }
@@ -142,7 +146,7 @@ nav {
         padding: 0 $menuPaddingLR;
        
 
-        .line {
+        .head {
             background: none;
             .toggle {display: none;}
         } 
@@ -216,4 +220,61 @@ nav {
     }
 }
 
+$butterflyLineHeight: 3px;
+
+
+.butterfly {
+    position: relative;
+    cursor: pointer;
+    //background: blueviolet;
+    .center-line,
+    .center-line::before,
+    .center-line::after {
+        position: absolute;
+        height: $butterflyLineHeight;
+        width: 100%;
+        background-color: #000;
+        border-radius: 1.5px; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        transition: top .3s .3s, transform .3s;
+    }
+
+    .center-line {   
+        top: 50%;   
+        transform: translateY(-50%); 
+        transition: background-color .3s .3s, box-shadow .3s .3s;
+    }
+
+    .center-line::before {
+        content: "";
+        top: -10px;
+    }
+
+    .center-line::after {
+        content: "";
+        top: 10px;
+    }
+
+    &.active {
+        .center-line {
+            background-color: transparent;
+            box-shadow: initial;
+            transition: background-color .3s, box-shadow .3s;
+        }
+
+        .center-line::before,
+        .center-line::after {
+            top: 0;
+            transition: top .3s, transform .3s .3s;
+        }
+        .center-line::before {
+            transform: rotate(45deg);
+        }
+
+        .center-line::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+}
 
