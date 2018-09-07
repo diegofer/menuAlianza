@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-alianza.component.scss']
 })
 export class MenuALianzaComponent implements OnInit {
-
+  
+  public expandir:boolean = false;
+  
   constructor() { }
 
   ngOnInit() {
