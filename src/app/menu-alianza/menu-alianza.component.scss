@@ -9,6 +9,7 @@ $socialPhoneSize: 50px;  // widht and height of social icons
 $color1: #fff;
 $color2: #b10b0f;
 $colorText: #000;
+$colorCloseBtn: $colorText;
 
 ul {
     list-style: none;
@@ -235,7 +236,7 @@ $butterflyLineHeight: 3px;
         position: absolute;
         height: $butterflyLineHeight;
         width: 100%;
-        background-color: #000;
+        background-color: $colorCloseBtn;
         border-radius: 1.5px; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
         transition: top .3s .3s, transform .3s;
