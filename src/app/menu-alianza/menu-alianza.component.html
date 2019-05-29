@@ -1,7 +1,7 @@
 <nav [class.active]="expandir">
 
     <div class="head">
-        <a class="logo" href="#home">
+        <a class="logo" href="#home" (click)="expandir = false">
             <img src="assets/menuAlianza/logo.svg" alt="La Alianza">
         </a>
         <div class="toggle butterfly" [class.active]="expandir" (click)="expandir = !expandir" >
